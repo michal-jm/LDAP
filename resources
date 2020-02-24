@@ -7,3 +7,7 @@ https://confluence.atlassian.com/kb/how-to-write-ldap-search-filters-792496933.h
 
 # open ldap on ubuntu instructions to setup (contains port numbers)
 https://help.ubuntu.com/lts/serverguide/openldap-server.html
+
+
+# this is tutorial i followed to create ldap:
+https://www.techrepublic.com/article/how-to-install-openldap-on-ubuntu-18-04/
