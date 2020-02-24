@@ -3,3 +3,7 @@ https://www.electricmonk.nl/log/2013/03/10/quick-introduction-to-ldap-basics/
 
 how to write ldap search filters
 https://confluence.atlassian.com/kb/how-to-write-ldap-search-filters-792496933.html
+
+
+# open ldap on ubuntu instructions to setup (contains port numbers)
+https://help.ubuntu.com/lts/serverguide/openldap-server.html
