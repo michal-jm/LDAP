@@ -1,0 +1,11 @@
+sudo apt-get remove --purge sldap
+Uninstall slapd and its dependencies
+sudo apt-get remove --auto-remove slapd
+sudo apt-get remove --purge ldap-utils
+sudo apt-get remove --purge slapd
+
+sudo rm -rf /etc/ldap
+/var/lib/dpkg/info/slapd.* /tmp/
+
+# if errors in reinstalling (however now included in the block above):
+sudo apt-get remove --purge slapd
