@@ -3,6 +3,7 @@ Uninstall slapd and its dependencies
 sudo apt-get remove --auto-remove slapd
 sudo apt-get remove --purge ldap-utils
 sudo apt-get remove --purge slapd
+udo apt-get remove --auto-remove ldap-utils
 
 sudo rm -rf /etc/ldap
 /var/lib/dpkg/info/slapd.* /tmp/
