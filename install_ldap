@@ -6,3 +6,6 @@ sudo tree /etc/ldap/slapd.d
 
 This is what the slapd-config DIT looks like via the LDAP protocol:
 sudo ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config dn
+
+This is what the dc=example,dc=com DIT looks like:
+ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn
