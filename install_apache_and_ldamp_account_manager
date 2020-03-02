@@ -19,6 +19,7 @@ sudo systemctl restart apache2
 
 # CONFIGURE LAM
 -------------------------------------------------------------
+http://(server’s hostname or IP address)/lam
 # The LDAP Account Manager Login form will be shown. We need to set our LDAP server profile by clicking on[LAM configuration] at the upper right corner.
 # Then click on,Edit server profiles
 ! Default password is lam
