@@ -12,7 +12,7 @@ https://help.ubuntu.com/lts/serverguide/openldap-server.html
 # this is tutorial i followed to create ldap:
 https://www.techrepublic.com/article/how-to-install-openldap-on-ubuntu-18-04/
 
-# anothre ldap configure tutorial
+# another ldap configure tutorial
 https://www.robertmunn.com/blog/install-and-configure-openldap-on-ubuntu-1804
 
 # Apache directory studio config - gui for LDAP
