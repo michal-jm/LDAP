@@ -1,0 +1,47 @@
+https://connect2id.com/products/ldapauth/auth-explained
+
+LDAP user authentication explained LDAP user authentication is the process of validating a username and password combination with a directory server such MS Active Directory, OpenLDAP or OpenDJ. LDAP directories are standard technology for storaging user, group and permission information and serving that to applications in the enterprise.
+
+Authenticating users with an LDAP directory is a two-step process. This article explains the mechanics of it and then how to configure it in LdapAuth.
+
+Step 1 – Resolving the username to a directory entry attribute User entries in a directory are identified by a distinguished name (DN) which resembles a path-like structure starting at the directory root (the rightmost segment):
+
+uid=alice,ou=people,dc=wonderland,dc=net In order to authenticate a user with an LDAP directory you first need to obtain their DN as well as their password.
+
+With a login form, people typically enter a simple identifier such as their username or email address. You don’t expect them to memorise the DN of their directory entry. That would be impractical.
+
+To solve this issue a DN resolution comes in. It takes the user’s name or email, then runs a search against the name or email attributes of all user entries to find the matching entry DN. Directories employ highly efficient indexing and caching, so these searches are typically very fast.
+
+The directory attributes to search for are defined in the searchFilter configuration parameter. The default LdapAuth configuration searches the UID and email attributes. The %u placeholder is substituted with the user identifier entered in the login form:
+
+ldapAuth.dnResolution.searchFilter = (|(uid=%u)(mail=%u)) If you want to search for UID only the search filter would look like this:
+
+ldapAuth.dnResolution.searchFilter = (uid=%u) If you want to search for UID, email and employee number, extend the filter to
+
+ldapAuth.dnResolution.searchFilter = (|(uid=%u)(mail=%u)(employeeNumber=%u)) Two important things to observe when configuring DN resolution and creating new user entries in the directory:
+
+The attributes – username, email, etc – with which users login must be unique. If two entries are found to have the same identifying attribute, e.g. email, authentication will be promptly denied.
+
+Make sure every user who is expected to login has a defined attribute for the identifying attribute. For example, if users are going to login with their email address, make sure all accounts have a defined email attribute. Else authentication will fail.
+
+The LdapAuth web API does not reveal in the authentication response the cause of the login failure – whether that was a wrong username, a wrong password, or both. To troubleshoot situations where a user is not able to login despite entering a correct username and password, check the service logs.
+
+If a login was rejected due to a bad username, a line like this will appear in the log:
+
+2012-10-01 10:52:51,460 INFO – user.auth: username=tom authenticated=false message=Invalid username If the username was correctly resolved, but the password was bad:
+
+2012-10-01 10:55:05,662 INFO – user.auth: username=alice DN=uid=alice,ou=people,dc=wonderland,dc=net authenticated=false message=Invalid password If we have correctly resolved the user’s directory entry DN, we can proceed to the next step – checking the password.
+
+Step 2 – Validating the user password Passwords are checked by an LDAP command called bind. A connection is opened to the directory server, then a request is sent to authenticate the connection as a particular user by passing its entry DN and password:
+
+DN: uid=alice,ou=people,dc=wonderland,dc=net password: secret If the credentials are correct, the directory server returns success. Otherwise it returns an LDAP error Invalid credentials (code 49).
+
+Important things to note here:
+
+The password is checked against an attribute in the user’s entry dedicated to serve that purpose. If you’re using a standard directory schema, this attribute is called userPassword. In MS Active Directory the name of this attribute is unicodePwd. Make sure that every user who is expected to login has a defined password attribute. Else authentication will fail.
+
+The password values are often hashed and may be additionally protected, e.g. by making them write-only. Therefore a simple LDAP read and comparison will generally not work here. The bind command is always the preferred method.
+
+Password are typically case sensitive.
+
+Again, remember that log files are your friend. They record details of every login attempt and can be used for quick troubleshooting when authentication is not working as expected. If you need more help with configuring LdapAuth get in touch with us.
