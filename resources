@@ -20,3 +20,12 @@ https://www.robertmunn.com/blog/install-apache-directory-studio-in-ubuntu-1804-t
 
 # Electronic Monk - nice and concise tour of LDAP
 https://www.electricmonk.nl/log/2013/03/10/quick-introduction-to-ldap-basics/
+
+'Ldap explainded' - a website with info regarding LDAP file system and naming
+https://connect2id.com/products/json2ldap/ldap-explained
+
+Ldap intro and how to enable MemberOf
+https://www.adimian.com/blog/2014/10/how-to-enable-memberof-using-openldap/
+
+Install OpenLDAP AND enable MemberOf
+http://www.schenkels.nl/2013/03/how-to-setup-openldap-with-memberof-overlay-ubuntu-12-04/
