@@ -29,3 +29,6 @@ https://www.adimian.com/blog/2014/10/how-to-enable-memberof-using-openldap/
 
 Install OpenLDAP AND enable MemberOf
 http://www.schenkels.nl/2013/03/how-to-setup-openldap-with-memberof-overlay-ubuntu-12-04/
+
+working of memberOf with various objects
+https://tylersguides.com/guides/openldap-memberof-overlay/
