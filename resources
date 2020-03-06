@@ -38,3 +38,6 @@ https://www.digitalocean.com/community/tutorials/how-to-manage-and-use-ldap-serv
 
 LDAP supposed solution to logging with php
 https://askubuntu.com/questions/574551/cannot-login-into-new-install-of-openldap
+
+ldap with nginx or apache
+https://www.linuxbabe.com/ubuntu/install-configure-openldap-server-ubuntu-16-04
