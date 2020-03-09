@@ -44,3 +44,6 @@ https://www.linuxbabe.com/ubuntu/install-configure-openldap-server-ubuntu-16-04
 
 match users to groups
 https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/users-and-groups-setup/manage-users-and-groups-with-ldap/
+
+memberOf overaly explained
+https://tylersguides.com/guides/openldap-memberof-overlay/#configuration_tag
