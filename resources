@@ -47,3 +47,6 @@ https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed
 
 memberOf overaly explained
 https://tylersguides.com/guides/openldap-memberof-overlay/#configuration_tag
+
+OpenLDAP for grouping users
+https://stackoverflow.com/questions/15818382/what-type-of-group-to-choose-in-openldap-for-grouping-users
